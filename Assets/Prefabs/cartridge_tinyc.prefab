@@ -27,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2778409820911463660}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 190.7676, y: 1.6990896, z: 122.1744}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -46,8 +46,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.052986577, y: 0.06117345, z: 0.005145136}
-  m_Center: {x: 0, y: 0.030417198, z: 0.0003121786}
+  m_Size: {x: 0.11732197, y: 0.13544917, z: 0.01139227}
+  m_Center: {x: 0, y: 0.067349225, z: 0.0006912206}
 --- !u!54 &2778409820911463633
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -94,6 +94,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   led1: {fileID: 2100000, guid: c4b2a3d91a34ff3439fa19b4a939389f, type: 2}
   led2: {fileID: 2100000, guid: 50a0efd1420ecea4a9023abcc15cbc57, type: 2}
+  rend: {fileID: 2778409821017061834}
   port: {fileID: 0}
   active: 0
 --- !u!1 &2778409821017061835
@@ -122,7 +123,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2778409821017061835}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.088, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2778409820911463639}
