@@ -1,8 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class port : MonoBehaviour {
+
+	public TextMeshPro field1;
+	public TextMeshPro field2;
 
 	public GameObject insertion_position;
 
@@ -55,6 +59,14 @@ public class port : MonoBehaviour {
 
 	public void deviceInput(string a) {
 		if(is_active) { current_card.GetComponent<cartridge>().action(a); }
+	}
+
+	public void setText1(string t) {
+		field1.text = t;
+	}
+
+	public void setText2(string t) {
+		field2.text = t;
 	}
 
 	public void initiateBoot() {

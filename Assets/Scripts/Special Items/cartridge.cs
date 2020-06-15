@@ -30,7 +30,10 @@ public class cartridge : MonoBehaviour {
 	}
 
 	public void action(string a){
-		if(active) { print("made it to cart: " + a); engine.Invoke("action", a); }
+		if(active) { 
+			print("made it to cart: " + a); 
+			engine.Invoke("action", a); 
+		}
 
 		switch(a) {
 			//Port is requesting insertion, respond!
@@ -47,6 +50,8 @@ public class cartridge : MonoBehaviour {
 		active = true;
 		engine = new Engine().SetValue("log", new Action<object>(print)) 
 							.SetValue("led", new Action<string>(led2Set))
+							.SetValue("write1", new Action<string>(setText1))
+							.SetValue("write2", new Action<string>(setText2))
 							;
 
 		try {
@@ -78,6 +83,9 @@ public class cartridge : MonoBehaviour {
 	public void stopRadioStation() {
 		print("stop radio");
 	}
+
+	public void setText1(string t) { port.GetComponent<port>().setText1(t); }
+	public void setText2(string t) { port.GetComponent<port>().setText2(t); }
 
 	public void led1Set(string color) {	ledSet(1, color); }
 	public void led2Set(string color) {	ledSet(2, color); }
