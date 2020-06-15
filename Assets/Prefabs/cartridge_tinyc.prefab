@@ -92,8 +92,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 557b72bf85f84344586cddcb5b1116b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  led1: {fileID: 2100000, guid: c4b2a3d91a34ff3439fa19b4a939389f, type: 2}
-  led2: {fileID: 2100000, guid: 50a0efd1420ecea4a9023abcc15cbc57, type: 2}
   rend: {fileID: 2778409821017061834}
   port: {fileID: 0}
   active: 0
@@ -156,7 +154,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: bf6605fde3c97ae469dd0b72ccefe62e, type: 2}
-  - {fileID: 2100000, guid: 50a0efd1420ecea4a9023abcc15cbc57, type: 2}
+  - {fileID: 2100000, guid: c4b2a3d91a34ff3439fa19b4a939389f, type: 2}
   - {fileID: 2100000, guid: c4b2a3d91a34ff3439fa19b4a939389f, type: 2}
   - {fileID: 2100000, guid: 03e1cd80e453c1644869df96fb113660, type: 2}
   m_StaticBatchInfo:

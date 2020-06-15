@@ -8,10 +8,7 @@ public class cartridge : MonoBehaviour {
 
 	private string program;
 
-	public Material led1; //Status LED
-	public Material led2; //User configurable LED
 	public Renderer rend;
-
 	public GameObject port;
 	public bool active = false;
 
@@ -20,7 +17,6 @@ public class cartridge : MonoBehaviour {
 		if(label_image != null) { 
 			print("Found label!");
 			
-			//Material temp = Instantiate<Material>(rend.materials[3]);
 			Material[] temp_materials = rend.materials;
 			temp_materials[3].SetTexture("_MainTex", label_image); 
 			rend.materials = temp_materials;
@@ -29,21 +25,8 @@ public class cartridge : MonoBehaviour {
 	}
 
 	void Start() {
-
-		ledSet(1, "off");
-		ledSet(2, "off");
-
-		//Temp program
-		program = @"
-					led('blue')
-					log('Hello World')
-
-					setInterval(function(){ log('OHHAI') }, 3000)
-
-					function action(s) {
-						log('js saw: ' + s)
-					}
-				";
+		led1Set("off");
+		led2Set("off");
 	}
 
 	public void action(string a){
@@ -65,17 +48,15 @@ public class cartridge : MonoBehaviour {
 		engine = new Engine().SetValue("log", new Action<object>(print)) 
 							.SetValue("led", new Action<string>(led2Set))
 							;
-							 
-		//engine.GetValue("action");
 
 		try {
 			engine.Execute(program);
 		} catch (Jint.Parser.ParserException pEx) {
-			ledSet(1, "red");
+			led1Set("red");
 			print(pEx);
 			return;
 		} catch (Jint.Runtime.JavaScriptException rEx) {
-			ledSet(1, "red");
+			led1Set("red");
 			print(rEx);
 			return;
 		}
@@ -102,30 +83,31 @@ public class cartridge : MonoBehaviour {
 	public void led2Set(string color) {	ledSet(2, color); }
 	
 	private void ledSet(int index, string color) {
-		var led = (index == 1) ? led1 : led2;
+		print(index.ToString() + " : " + color);
 		switch(color) {
 			case "off":
-				setLedMat(led, new Color32(109, 109, 109, 255), 0);
+				setLedMat(index, new Color(0.05f, 0.05f, 0.05f, 1), 0);
 				break;
 			case "blue":
-				setLedMat(led, new Color32(0, 159, 236, 255), 2);
+				setLedMat(index, new Color(0.02f, 0.6f, 1f, 1), 0.5f);
 				break;
 			case "red":
-				setLedMat(led, new Color32(224, 18, 18, 255), 0.5f);
+				setLedMat(index, new Color(1f, 0, 0, 1), 0.5f);
+				break;
+			case "green":
+				setLedMat(index, new Color(0.02f, 1f, 0.05f, 1), 0.5f);
+				break;
+			case "purple":
+				setLedMat(index, new Color(0.8f, 0, 1f, 1), 0.5f);
 				break;
 		}
 	}
 
-	private void setLedMat(Material mat, Color32 color, float intensity) {
-		float factor = intensity; //(intensity>0) ? Mathf.Pow(2,intensity) : 0;
-		mat.SetColor("_EmissionColor", new Color(color.r * factor, color.g * factor, color.b * factor, 1));
-	}
-
-	public void setLabelBase64(string image) {
-		//string b64_string = imag;
-		byte[] bytes = System.Convert.FromBase64String(image);
-		var tex = new Texture2D(1,1);
-		tex.LoadImage( bytes);
-		//label.SetTexture("_MainTexture", tex);
+	private void setLedMat(int mat_index, Color color, float intensity) {
+		Material[] temp_materials = rend.materials;
+		float factor = intensity;
+		temp_materials[mat_index].SetColor("_EmissionColor", new Color(color.r, color.g, color.b, 1));
+		
+		rend.materials = temp_materials;
 	}
 }
