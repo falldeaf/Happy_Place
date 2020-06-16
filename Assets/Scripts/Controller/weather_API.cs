@@ -10,8 +10,9 @@ public class weather_API : MonoBehaviour {
 
 	public Weather_Scriptable[] weather_modes;
 
+	public GameObject[] rain;
+	public Material rain_glass;
 	public Terrain terrain;
-	public ParticleSystem rain;
 	public GameObject sheets;
 	public WindZone wind;
 
@@ -28,4 +29,28 @@ public class weather_API : MonoBehaviour {
 		//print(weather_modes[index].name);
 	}
 	//RenderSettings.skybox =
+
+	private void setRainGlass(int intensity) { 
+
+	}
+
+	private void setGrassWind(int intensity) {
+		switch(intensity) {
+			case 0:
+				terrain.GetComponent<Terrain>().terrainData.wavingGrassSpeed    = 1f;
+				terrain.GetComponent<Terrain>().terrainData.wavingGrassAmount   = 1f;
+				terrain.GetComponent<Terrain>().terrainData.wavingGrassStrength = 1f;
+				break;
+			case 1:
+				terrain.GetComponent<Terrain>().terrainData.wavingGrassSpeed    = 0.5f;
+				terrain.GetComponent<Terrain>().terrainData.wavingGrassAmount   = 0.5f;
+				terrain.GetComponent<Terrain>().terrainData.wavingGrassStrength = 0.5f;
+				break;
+			case 2:
+				terrain.GetComponent<Terrain>().terrainData.wavingGrassSpeed    = 0.2f;
+				terrain.GetComponent<Terrain>().terrainData.wavingGrassAmount   = 0.2f;
+				terrain.GetComponent<Terrain>().terrainData.wavingGrassStrength = 0.2f;
+				break;
+		}
+	}
 }

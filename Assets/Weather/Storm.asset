@@ -14,5 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skybox: {fileID: 2100000, guid: 54fe2f000ad8f424fb63cc3ea0ae2bb2, type: 2}
   rain: {fileID: 0}
-  wind: {fileID: 2655988077585873504, guid: a0711e63cb1da8b428179bad9c4e9400, type: 2}
-  grass_wind: {fileID: 0}
+  rain_sheets: 0
+  rain_drops: 0
+  wind: {fileID: 0}
+  grass_wind: 0
