@@ -80,10 +80,10 @@
                      "output" : "/actions/default/in/rightclick"
                   },
                   "north" : {
-                     "output" : "/actions/default/in/teleport"
+                     "output" : "/actions/default/in/topclick"
                   },
                   "south" : {
-                     "output" : "/actions/default/in/teleport"
+                     "output" : "/actions/default/in/bottomclick"
                   },
                   "west" : {
                      "output" : "/actions/default/in/leftclick"
@@ -115,10 +115,10 @@
                      "output" : "/actions/default/in/rightclick"
                   },
                   "north" : {
-                     "output" : "/actions/default/in/teleport"
+                     "output" : "/actions/default/in/topclick"
                   },
                   "south" : {
-                     "output" : "/actions/default/in/teleport"
+                     "output" : "/actions/default/in/bottomclick"
                   },
                   "west" : {
                      "output" : "/actions/default/in/leftclick"

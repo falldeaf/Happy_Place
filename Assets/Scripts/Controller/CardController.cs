@@ -18,7 +18,6 @@ public class CardController : MonoBehaviour
 				
 				string program_string = File.ReadAllText(file);
 				string image_path = Path.GetDirectoryName(file) + "\\" + Path.GetFileNameWithoutExtension(file) + ".png";
-				print(image_path);
 
 				if(File.Exists( image_path ) ) {
 					cart.GetComponent<cartridge>().initialize(program_string, loadTextureFromFile(image_path));

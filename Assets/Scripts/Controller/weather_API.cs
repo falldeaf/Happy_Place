@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using Jint;
 
 public class weather_API : MonoBehaviour {
 
@@ -17,8 +19,13 @@ public class weather_API : MonoBehaviour {
 		Instance = this;
 	}
 
+	public void setup(Engine e) {
+		e.SetValue("weather_preset", new Action<int>(setWeather));
+	}
+
 	public void setWeather(int index) {
-		print(weather_modes[index].name);
+		print(index.ToString());
+		//print(weather_modes[index].name);
 	}
 	//RenderSettings.skybox =
 }

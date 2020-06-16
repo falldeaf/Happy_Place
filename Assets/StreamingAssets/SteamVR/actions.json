@@ -70,6 +70,14 @@
       "type": "boolean"
     },
     {
+      "name": "/actions/default/in/TopClick",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/default/in/BottomClick",
+      "type": "boolean"
+    },
+    {
       "name": "/actions/default/out/Haptic",
       "type": "vibration"
     },

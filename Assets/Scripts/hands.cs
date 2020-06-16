@@ -12,6 +12,8 @@ public class hands : MonoBehaviour {
 	public SteamVR_Action_Boolean centerClickAction;
 	public SteamVR_Action_Boolean left_ClickAction;
 	public SteamVR_Action_Boolean right_ClickAction;
+	public SteamVR_Action_Boolean top_ClickAction;
+	public SteamVR_Action_Boolean bottom_ClickAction;
 
 	private GameObject collidingObject;
 	private GameObject objectInHand;
@@ -114,6 +116,14 @@ public class hands : MonoBehaviour {
 
 		if (right_ClickAction.GetLastStateDown(handType) && objectInHand != null) {
 			objectInHand.SendMessage("action", "right_click");
+		}
+
+		if (top_ClickAction.GetLastStateDown(handType) && objectInHand != null) {
+			objectInHand.SendMessage("action", "top_click");
+		}
+
+		if (bottom_ClickAction.GetLastStateDown(handType) && objectInHand != null) {
+			objectInHand.SendMessage("action", "bottom_click");
 		}
 
 		if (grabAction.GetLastStateUp(handType)) {

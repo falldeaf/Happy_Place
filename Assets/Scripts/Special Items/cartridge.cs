@@ -13,10 +13,7 @@ public class cartridge : MonoBehaviour {
 	public bool active = false;
 
 	public void initialize(string content, Texture label_image) {
-		print("init!: " + content);
 		if(label_image != null) { 
-			print("Found label!");
-			
 			Material[] temp_materials = rend.materials;
 			temp_materials[3].SetTexture("_MainTex", label_image); 
 			rend.materials = temp_materials;
@@ -31,7 +28,6 @@ public class cartridge : MonoBehaviour {
 
 	public void action(string a){
 		if(active) { 
-			print("made it to cart: " + a); 
 			engine.Invoke("action", a); 
 		}
 
@@ -52,6 +48,7 @@ public class cartridge : MonoBehaviour {
 							.SetValue("led", new Action<string>(led2Set))
 							.SetValue("write1", new Action<string>(setText1))
 							.SetValue("write2", new Action<string>(setText2))
+							.SetValue("setup", new Action<string>(setup))
 							;
 
 		try {
@@ -72,16 +69,15 @@ public class cartridge : MonoBehaviour {
 		active = false;
 	}
 
-	public void setWeather(string w) {
-		weather_API.Instance.setWeather(0);
-	}
-
-	public void setRadioStation(string url) {
-		print(url);
-	}
-
-	public void stopRadioStation() {
-		print("stop radio");
+	public void setup(string api_name) {
+		switch(api_name) {
+			case "oggplayer":
+				oggplayer_API.Instance.setup(engine);
+				break;
+			case "weather":
+				weather_API.Instance.setup(engine);
+				break;
+		}
 	}
 
 	public void setText1(string t) { port.GetComponent<port>().setText1(t); }
@@ -91,7 +87,6 @@ public class cartridge : MonoBehaviour {
 	public void led2Set(string color) {	ledSet(2, color); }
 	
 	private void ledSet(int index, string color) {
-		print(index.ToString() + " : " + color);
 		switch(color) {
 			case "off":
 				setLedMat(index, new Color(0.05f, 0.05f, 0.05f, 1), 0);

@@ -70,7 +70,6 @@ public class port : MonoBehaviour {
 	}
 
 	public void initiateBoot() {
-		print("boot!");
 		device.SendMessage("booting");
 		current_card.GetComponent<cartridge>().boot();
 	}
