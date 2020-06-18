@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cf2f324c676ac242b15a01c9ce7363d, type: 3}
   m_Name: Storm
   m_EditorClassIdentifier: 
-  skybox: {fileID: 2100000, guid: 54fe2f000ad8f424fb63cc3ea0ae2bb2, type: 2}
-  rain: {fileID: 0}
-  rain_sheets: 0
-  rain_drops: 0
-  wind: {fileID: 0}
-  grass_wind: 0
+  quote: If patience is worth anything, it must endure to the end of time. And a
+    living faith will last in the midst of the blackest storm. -<b>Mahatma Gandhi</b>
+  rain_intensity: 1
+  wind_intensity: 1
+  Dusk_Dawn: 0
+  skybox: {fileID: 2100000, guid: f2b5f3f20933f434e850db1b710542fd, type: 2}

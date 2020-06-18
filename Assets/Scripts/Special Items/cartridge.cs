@@ -34,7 +34,7 @@ public class cartridge : MonoBehaviour {
 		switch(a) {
 			//Port is requesting insertion, respond!
 			case "center_click":
-				if(!active) {
+				if(!active && transform.parent != null) {
 					transform.parent.gameObject.GetComponent<hands>().releaseObjectSelf();
 					port.GetComponent<port>().insert();
 				}
