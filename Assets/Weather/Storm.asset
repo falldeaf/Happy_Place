@@ -17,4 +17,5 @@ MonoBehaviour:
   rain_intensity: 1
   wind_intensity: 1
   Dusk_Dawn: 0
+  Wind_Rain_Audio_Snapshot: 6
   skybox: {fileID: 2100000, guid: f2b5f3f20933f434e850db1b710542fd, type: 2}

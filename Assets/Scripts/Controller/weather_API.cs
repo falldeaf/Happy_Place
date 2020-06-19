@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using System;
 using Jint;
 
@@ -17,6 +18,8 @@ public class weather_API : MonoBehaviour {
 	public Terrain terrain;
 	public GameObject sheets;
 	public WindZone wind;
+	public AudioMixerSnapshot[] weatherAudioSnapshots;
+	public AnimationCurve rain_change;
 
 	public float transition_time;
 
@@ -42,8 +45,13 @@ public class weather_API : MonoBehaviour {
 		setRainGlass(index);
 		setGrassWind(index);
 		setWind(index);
+		setWeatherAudio(index);
 	}
 	//RenderSettings.skybox =
+
+	private void setWeatherAudio(int index) {
+		weatherAudioSnapshots[weather_modes[index].Wind_Rain_Audio_Snapshot].TransitionTo(transition_time);
+	}
 
 	private void weatherTween(float from, float to, string callback) {
 		iTween.ValueTo( gameObject, iTween.Hash(
@@ -71,12 +79,17 @@ public class weather_API : MonoBehaviour {
 	}
 
 	private void setRain(int index) {
-		weatherTween(rain.emission.rate.constant, Utility.convertRangeOne(weather_modes[index].rain_intensity, 10f, 5000f), "rainTweenCallback");
+		weatherTween(Utility.convertRange(rain.emission.rate.constant, 10f, 5000f, 0, 1f), weather_modes[index].rain_intensity, "rainTweenCallback");
 	}
 
 	private void rainTweenCallback(float val) {
+		if(rain.emission.rate.constant > 2000 && !sheets.activeSelf) {
+			sheets.SetActive(true);
+		} else if(rain.emission.rate.constant < 2000 && sheets.activeSelf) {
+			sheets.SetActive(false);
+		}
 		var em = rain.emission;
-		em.rateOverTime = val;
+		em.rateOverTime = Utility.convertRangeOne(rain_change.Evaluate(val), 10f, 5000f);
 	}
 
 	private void setRainGlass(int index) {
