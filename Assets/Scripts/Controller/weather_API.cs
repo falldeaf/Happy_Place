@@ -7,10 +7,14 @@ using Jint;
 
 public class weather_API : MonoBehaviour {
 
+	private bool currently_changing = false;
+	private string json;
+
 	public static weather_API Instance{ get; private set; }
 
 	public Weather_Scriptable[] weather_modes;
 
+	public GameObject sun;
 	public Material skybox;
 	public Material default_skybox;
 	public ParticleSystem rain;
@@ -18,7 +22,8 @@ public class weather_API : MonoBehaviour {
 	public Terrain terrain;
 	public GameObject sheets;
 	public WindZone wind;
-	public AudioMixerSnapshot[] weatherAudioSnapshots;
+	public AudioMixer mixer;
+	public GameObject[] weather_audio_sources;
 	public AnimationCurve rain_change;
 
 	public float transition_time;
@@ -31,26 +36,71 @@ public class weather_API : MonoBehaviour {
 		grassTweenCallback(0.2f);
 		glassTweenCallback(0);
 		
-		setWeather(0);
+		//setWeather(0);
+		json = "[";
+		foreach(var scriptable in weather_modes) {
+			json += "\"" + scriptable.quote + "\",";
+		}
+		json = json.TrimEnd(',');
+		json += "]";
 	}
 
 	public void setup(Engine e) {
-		e.SetValue("weather_preset", new Action<int>(setWeather));
+		e.Execute("weather_list = " + json);
+		e.SetValue("switchweather",  new Action<int>(setWeather));
 	}
 
 	public void setWeather(int index) {
+		if(currently_changing) return;
 		iTween.Stop(gameObject);
 		setSky(index);
 		setRain(index);
 		setRainGlass(index);
 		setGrassWind(index);
 		setWind(index);
+		setSun(index);
 		setWeatherAudio(index);
+		StartCoroutine(changingWait());
 	}
 	//RenderSettings.skybox =
 
+	IEnumerator changingWait() {
+		currently_changing = true;
+		yield return new WaitForSeconds(transition_time+2f);
+	}
+
+	private void setSun(int index) {
+		iTween.RotateTo( sun, iTween.Hash(
+			"x", Utility.convertRangeOne(weather_modes[index].Dusk_Dawn, 0, 360f),
+			"time", transition_time,
+			"onupdatetarget", gameObject,
+			"easetype", iTween.EaseType.easeOutQuad
+			)
+		);
+	}
+
 	private void setWeatherAudio(int index) {
-		weatherAudioSnapshots[weather_modes[index].Wind_Rain_Audio_Snapshot].TransitionTo(transition_time);
+		float[] volumes =  new float[] {	weather_modes[index].light_wind,
+											weather_modes[index].heavy_wind,
+											weather_modes[index].light_rain,
+											weather_modes[index].heavy_rain,
+											weather_modes[index].daytime,
+											weather_modes[index].nighttime };
+
+		for(int i = 0; i<weather_audio_sources.Length; i++) {
+			audioTween(weather_audio_sources[i], volumes[i]);
+			//weather_audio_sources[i] = volumes[i];
+		}
+	}
+
+	private void audioTween(GameObject go, float to) {
+		iTween.AudioTo( go, iTween.Hash(
+			"volume", to,
+			"time", transition_time,
+			"onupdatetarget", gameObject,
+			"easetype", iTween.EaseType.easeOutQuad
+			)
+		);
 	}
 
 	private void weatherTween(float from, float to, string callback) {

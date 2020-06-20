@@ -1,139 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!244 &-9210491204927311229
+--- !u!244 &-4166170183158236614
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 
-  m_EffectID: b07e653edbd01e04e9cd1013d6e964e9
+  m_EffectID: 83083562c0bc50644bd3d953b2666891
   m_EffectName: Attenuation
-  m_MixLevel: ab1dcc07ce353ad42ac1fc747f665840
+  m_MixLevel: 4c17fa35cc2e73c45a3d5dd859ad997b
   m_Parameters: []
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
---- !u!243 &-8121626801915415413
-AudioMixerGroupController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Rain Light
-  m_AudioMixer: {fileID: 24100000}
-  m_GroupID: bb111962cc5887f439fe6e409fd3e540
-  m_Children: []
-  m_Volume: d04a19a2ca9769d408dc823daca647d2
-  m_Pitch: c6c9dd1a678fcae47909931c296e1f08
-  m_Send: 00000000000000000000000000000000
-  m_Effects:
-  - {fileID: -7564468122830359423}
-  m_UserColorIndex: 0
-  m_Mute: 0
-  m_Solo: 0
-  m_BypassEffects: 0
---- !u!244 &-7564468122830359423
-AudioMixerEffectController:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_EffectID: d221b9b6467d30543b9e2c51f9288eca
-  m_EffectName: Attenuation
-  m_MixLevel: bf61dfa430f379c43829731c0dc8111f
-  m_Parameters: []
-  m_SendTarget: {fileID: 0}
-  m_EnableWetMix: 0
-  m_Bypass: 0
---- !u!245 &-6299785923950063908
+--- !u!245 &-1394603910302550557
 AudioMixerSnapshotController:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Low Rain, High Wind
+  m_Name: daytime
   m_AudioMixer: {fileID: 24100000}
-  m_SnapshotID: 038626bb02a398b4fafb6a3e811d727a
+  m_SnapshotID: ae19b7e07db5a2f428fc2a2fddca1a64
   m_FloatValues:
-    d04a19a2ca9769d408dc823daca647d2: 0.025578512
-    0a23b35564744f04a8cc93782a884099: 0.04171297
+    d04a19a2ca9769d408dc823daca647d2: -0.19117308
+    0a23b35564744f04a8cc93782a884099: -0.102314055
     5a1e09a73b76aa242b95242f5d589ca4: 0.13552584
-    58ec1a0e58a56d3468dec6f6140419ca: -59.606762
-    bcb83c6f45715e6458ea3038273690ed: -59.606762
-  m_TransitionOverrides: {}
---- !u!245 &-5918363678503345309
-AudioMixerSnapshotController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Low Rain, Low Wind
-  m_AudioMixer: {fileID: 24100000}
-  m_SnapshotID: bd5308698724cad49bfbd45cb624e205
-  m_FloatValues:
-    0a23b35564744f04a8cc93782a884099: -59.606762
-    5a1e09a73b76aa242b95242f5d589ca4: 0.13552584
-    bcb83c6f45715e6458ea3038273690ed: -59.606762
-  m_TransitionOverrides: {}
---- !u!245 &-3460764934131425370
-AudioMixerSnapshotController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Low Rain, No Wind
-  m_AudioMixer: {fileID: 24100000}
-  m_SnapshotID: 31e3882ade93c1a4f8c79165472459a2
-  m_FloatValues:
-    0a23b35564744f04a8cc93782a884099: -59.606762
-    5a1e09a73b76aa242b95242f5d589ca4: 0.13552584
-    58ec1a0e58a56d3468dec6f6140419ca: -59.606762
-    bcb83c6f45715e6458ea3038273690ed: -59.606762
-  m_TransitionOverrides: {}
---- !u!244 &-2097428551448296796
-AudioMixerEffectController:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_EffectID: bfd29b0fd9944474881dac29945c418b
-  m_EffectName: Attenuation
-  m_MixLevel: 02fe4f8d95708f44a9dca9c2380a12a0
-  m_Parameters: []
-  m_SendTarget: {fileID: 0}
-  m_EnableWetMix: 0
-  m_Bypass: 0
---- !u!245 &-1268570508395871668
-AudioMixerSnapshotController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: High Rain, Low Wind
-  m_AudioMixer: {fileID: 24100000}
-  m_SnapshotID: a0214987aab835344959f17881afb172
-  m_FloatValues:
-    d04a19a2ca9769d408dc823daca647d2: -59.606762
-    0a23b35564744f04a8cc93782a884099: -59.606762
-    5a1e09a73b76aa242b95242f5d589ca4: 0.13552584
-  m_TransitionOverrides: {}
---- !u!245 &-985709225203794335
-AudioMixerSnapshotController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: No Rain, Low Wind
-  m_AudioMixer: {fileID: 24100000}
-  m_SnapshotID: ecbd84dc36997cb439afc140cb3fdd22
-  m_FloatValues:
-    d04a19a2ca9769d408dc823daca647d2: -59.606762
-    0a23b35564744f04a8cc93782a884099: -59.606762
-    5a1e09a73b76aa242b95242f5d589ca4: 0.13552584
-    bcb83c6f45715e6458ea3038273690ed: -59.606762
+    983899198d09cc6409a84fbdc19ec278: -0.30163807
+    58ec1a0e58a56d3468dec6f6140419ca: -0.002441872
+    a7d58e4e312e09b46824253adefe120a: -7.5501633
+    bcb83c6f45715e6458ea3038273690ed: -0.30163807
   m_TransitionOverrides: {}
 --- !u!241 &24100000
 AudioMixerController:
@@ -145,14 +42,8 @@ AudioMixerController:
   m_OutputGroup: {fileID: 0}
   m_MasterGroup: {fileID: 24300002}
   m_Snapshots:
-  - {fileID: 5478366514356002599}
-  - {fileID: -985709225203794335}
-  - {fileID: -3460764934131425370}
-  - {fileID: -5918363678503345309}
-  - {fileID: -6299785923950063908}
-  - {fileID: -1268570508395871668}
-  - {fileID: 2100775770330938319}
-  m_StartSnapshot: {fileID: 5478366514356002599}
+  - {fileID: -1394603910302550557}
+  m_StartSnapshot: {fileID: -1394603910302550557}
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
   m_UpdateMode: 0
@@ -160,13 +51,10 @@ AudioMixerController:
   m_AudioMixerGroupViews:
   - guids:
     - be2bc781a3351c944a5a09bba1c8c840
-    - 0a8c50ccb3a77f442a568b5cff4ece72
-    - 026a684ccc784284f8729344e08a3a7b
-    - bb111962cc5887f439fe6e409fd3e540
-    - 4abb5bf4ca17cb8488b06c1e99f65413
+    - fd8356320141c2c4786f07dcef113fd0
     name: View
   m_CurrentViewIndex: 0
-  m_TargetSnapshot: {fileID: 2100775770330938319}
+  m_TargetSnapshot: {fileID: -1394603910302550557}
 --- !u!243 &24300002
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -177,10 +65,7 @@ AudioMixerGroupController:
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: be2bc781a3351c944a5a09bba1c8c840
   m_Children:
-  - {fileID: 6698660923541206702}
-  - {fileID: 9049179595434183392}
-  - {fileID: 7860771275812360655}
-  - {fileID: -8121626801915415413}
+  - {fileID: 3542141510885650500}
   m_Volume: 5a1e09a73b76aa242b95242f5d589ca4
   m_Pitch: a755e74aa1854024e9da13ef33eb5bcc
   m_Send: 00000000000000000000000000000000
@@ -204,103 +89,37 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
---- !u!245 &2100775770330938319
-AudioMixerSnapshotController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: High Rain, High Wind
-  m_AudioMixer: {fileID: 24100000}
-  m_SnapshotID: 67b3f4d45f3864f4ca804364b6d54c1a
-  m_FloatValues:
-    d04a19a2ca9769d408dc823daca647d2: -59.606762
-    5a1e09a73b76aa242b95242f5d589ca4: 0.13552584
-    58ec1a0e58a56d3468dec6f6140419ca: -59.606762
-  m_TransitionOverrides: {}
---- !u!245 &5478366514356002599
-AudioMixerSnapshotController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: No Rain, No Wind
-  m_AudioMixer: {fileID: 24100000}
-  m_SnapshotID: 99d5253b65119b2478088448d64cc6b9
-  m_FloatValues:
-    d04a19a2ca9769d408dc823daca647d2: -59.606762
-    0a23b35564744f04a8cc93782a884099: -59.606762
-    5a1e09a73b76aa242b95242f5d589ca4: 0.13552584
-    58ec1a0e58a56d3468dec6f6140419ca: -59.606762
-    bcb83c6f45715e6458ea3038273690ed: -59.606762
-  m_TransitionOverrides: {}
---- !u!243 &6698660923541206702
-AudioMixerGroupController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Wind Light
-  m_AudioMixer: {fileID: 24100000}
-  m_GroupID: 4abb5bf4ca17cb8488b06c1e99f65413
-  m_Children: []
-  m_Volume: 58ec1a0e58a56d3468dec6f6140419ca
-  m_Pitch: a7bb1cfd27781b94faae4fd7d852801d
-  m_Send: 00000000000000000000000000000000
-  m_Effects:
-  - {fileID: -2097428551448296796}
-  m_UserColorIndex: 0
-  m_Mute: 0
-  m_Solo: 0
-  m_BypassEffects: 0
---- !u!244 &7008912666944728368
+--- !u!244 &1142133671066080547
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 
-  m_EffectID: 0627da603d7edf743907303eabf46c37
-  m_EffectName: Attenuation
-  m_MixLevel: d615b42c8ba83fe41b6042601bfe855c
-  m_Parameters: []
+  m_EffectID: ff10a9f751f90194a9b2e66402ba54d0
+  m_EffectName: Lowpass Simple
+  m_MixLevel: 1519060701373b04782f980b21ddbd9b
+  m_Parameters:
+  - m_ParameterName: Cutoff freq
+    m_GUID: af2b83295f660a54fbb51f15c4f45c6a
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
---- !u!243 &7860771275812360655
+--- !u!243 &3542141510885650500
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Rain Heavy
+  m_Name: Weather
   m_AudioMixer: {fileID: 24100000}
-  m_GroupID: 0a8c50ccb3a77f442a568b5cff4ece72
+  m_GroupID: fd8356320141c2c4786f07dcef113fd0
   m_Children: []
-  m_Volume: bcb83c6f45715e6458ea3038273690ed
-  m_Pitch: 4e78d0d2addf03243ad2a9985caa8fd5
+  m_Volume: 983899198d09cc6409a84fbdc19ec278
+  m_Pitch: 548bd415332f48747bbc0b999da8ca96
   m_Send: 00000000000000000000000000000000
   m_Effects:
-  - {fileID: -9210491204927311229}
-  m_UserColorIndex: 0
-  m_Mute: 0
-  m_Solo: 0
-  m_BypassEffects: 0
---- !u!243 &9049179595434183392
-AudioMixerGroupController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Wind Heavy
-  m_AudioMixer: {fileID: 24100000}
-  m_GroupID: 026a684ccc784284f8729344e08a3a7b
-  m_Children: []
-  m_Volume: 0a23b35564744f04a8cc93782a884099
-  m_Pitch: 79f945a7f0064724a91988db906c59bc
-  m_Send: 00000000000000000000000000000000
-  m_Effects:
-  - {fileID: 7008912666944728368}
+  - {fileID: -4166170183158236614}
   m_UserColorIndex: 0
   m_Mute: 0
   m_Solo: 0

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cf2f324c676ac242b15a01c9ce7363d, type: 3}
+  m_Name: Windy Night
+  m_EditorClassIdentifier: 
+  quote: "The wind is made of haunting souls that moan and groan in whistles and
+    whispers \u2015 Richelle E. Goodrich"
+  rain_intensity: 0
+  wind_intensity: 0.627
+  Dusk_Dawn: 0.826
+  skybox: {fileID: 2100000, guid: c494c335823f54b52b2e87e1b7a63a23, type: 2}
+  light_wind: 0.889
+  heavy_wind: 0
+  light_rain: 0
+  heavy_rain: 0
+  daytime: 0
+  nighttime: 0.439

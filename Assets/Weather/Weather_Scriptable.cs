@@ -8,8 +8,17 @@ public class Weather_Scriptable : ScriptableObject
 	[Range(0.0f, 1.0f)] public float rain_intensity;
 	[Range(0.0f, 1.0f)] public float wind_intensity;
 	[Range(0.0f, 1.0f)] public float Dusk_Dawn;
-	
-	[Header("0:nR nW 2:nR lW 3:lR lW 4:lR hW 5:hR lW 6:hR hW ")]
-	[Range(0,6)] public int Wind_Rain_Audio_Snapshot;
+	//[Header("0:nR nW 2:nR lW 3:lR lW 4:lR hW 5:hR lW 6:hR hW ")]
+	//[Range(0,6)] public int Wind_Rain_Audio_Snapshot;
+
 	public Material skybox;
+
+	[Header("Audio snaptshots")]
+	[Range(0.0f, 1.0f)] public float light_wind;
+	[Range(0.0f, 1.0f)] public float heavy_wind;
+	[Range(0.0f, 1.0f)] public float light_rain;
+	[Range(0.0f, 1.0f)] public float heavy_rain;
+	[Range(0.0f, 1.0f)] public float daytime;
+	[Range(0.0f, 1.0f)] public float nighttime;
+
 }

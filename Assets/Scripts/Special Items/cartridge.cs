@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using System;
 using Jint;
 
@@ -48,6 +50,7 @@ public class cartridge : MonoBehaviour {
 							.SetValue("led", new Action<string>(led2Set))
 							.SetValue("write1", new Action<string>(setText1))
 							.SetValue("write2", new Action<string>(setText2))
+							.SetValue("wait", new Action<float,string>(waitTime))
 							.SetValue("setup", new Action<string>(setup))
 							;
 
@@ -77,7 +80,21 @@ public class cartridge : MonoBehaviour {
 			case "weather":
 				weather_API.Instance.setup(engine);
 				break;
+			case "ebook":
+				//ebook_API.Instance.setup(engine);
+				break;
 		}
+	}
+
+	public void waitTime(float time, string callback) {
+		print(time.ToString());
+		StartCoroutine(sendCallback(time, callback));
+	}
+
+	IEnumerator sendCallback(float time, string callback) {
+		yield return new WaitForSeconds(time);
+		engine.Invoke(callback);
+		print(callback);
 	}
 
 	public void setText1(string t) { port.GetComponent<port>().setText1(t); }
