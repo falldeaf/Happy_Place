@@ -18,9 +18,9 @@ MonoBehaviour:
   wind_intensity: 0.627
   Dusk_Dawn: 0.826
   skybox: {fileID: 2100000, guid: c494c335823f54b52b2e87e1b7a63a23, type: 2}
-  light_wind: 0.889
+  light_wind: 0.661
   heavy_wind: 0
   light_rain: 0
   heavy_rain: 0
   daytime: 0
-  nighttime: 0.439
+  nighttime: 1
