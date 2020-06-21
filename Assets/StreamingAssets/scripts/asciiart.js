@@ -1,4 +1,3 @@
-setup("oggplayer")
 led("purple")
 write1("")
 write2("Welcome to the ascii Art gallery! \\(^O^)/\n\nClick left or right to view ASCII Art.")
