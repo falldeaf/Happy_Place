@@ -70,6 +70,7 @@ public class cartridge : MonoBehaviour {
 
 	public void eject() {
 		active = false;
+		engine = null;
 	}
 
 	public void setup(string api_name) {

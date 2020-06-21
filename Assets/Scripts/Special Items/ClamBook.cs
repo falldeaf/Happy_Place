@@ -35,7 +35,11 @@ public class ClamBook : MonoBehaviour {
 						"onStart", "playSound"));
 				}
 				is_open = !is_open;
-			break;
+				break;
+			case "trigger_click":
+				print("Trigger!");
+				if(port.GetComponent<port>().is_active) port.GetComponent<port>().eject();
+				break;
 		}
 
 		if(is_booted) { port.GetComponent<port>().deviceInput(a); }

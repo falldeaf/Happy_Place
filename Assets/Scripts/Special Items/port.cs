@@ -12,7 +12,7 @@ public class port : MonoBehaviour {
 
 	private GameObject device;
 	private GameObject current_card;
-	private bool is_active = false;
+	public bool is_active = false;
 
 	public void registerDevice(GameObject go) { device = go; }
 
@@ -55,6 +55,20 @@ public class port : MonoBehaviour {
 		iTween.MoveTo(current_card, iTween.Hash("position", Vector3.zero, "islocal", true, "easeType", 
 												"easeInOutExpo", "loopType", "none", "time", 1.4f, 
 												"oncomplete", "initiateBoot", "oncompletetarget" , this.gameObject));
+	}
+
+	public void eject() {
+		iTween.MoveTo(current_card, iTween.Hash("position", insertion_position.transform.localPosition, "islocal", true, "easeType", 
+												"easeInOutExpo", "loopType", "none", "time", 1.4f, 
+												"oncomplete", "ejectedCard", "oncompletetarget" , this.gameObject));
+	}
+
+	public void ejectedCard() {
+		current_card.GetComponent<BoxCollider>().enabled = true;
+		current_card.transform.parent = null;
+		current_card.GetComponent<Rigidbody>().isKinematic = false;
+		device.SendMessage("ejecting");
+		is_active = false;
 	}
 
 	public void deviceInput(string a) {

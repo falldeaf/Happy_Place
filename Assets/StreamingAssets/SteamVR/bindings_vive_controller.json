@@ -100,7 +100,10 @@
             {
                "inputs" : {
                   "click" : {
-                     "output" : "/actions/default/in/teleport"
+                     "output" : "/actions/default/in/triggerclick"
+                  },
+                  "pull" : {
+                     "output" : "/actions/default/in/squeeze"
                   }
                },
                "mode" : "trigger",
@@ -133,7 +136,10 @@
             {
                "inputs" : {
                   "click" : {
-                     "output" : "/actions/default/in/teleport"
+                     "output" : "/actions/default/in/triggerclick"
+                  },
+                  "pull" : {
+                     "output" : "/actions/default/in/squeeze"
                   }
                },
                "mode" : "trigger",
