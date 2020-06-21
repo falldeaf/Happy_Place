@@ -67,6 +67,7 @@ public class weather_API : MonoBehaviour {
 	IEnumerator changingWait() {
 		currently_changing = true;
 		yield return new WaitForSeconds(transition_time+2f);
+		currently_changing = false;
 	}
 
 	private void setSun(int index) {
