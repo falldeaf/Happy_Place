@@ -13,7 +13,7 @@ public class cartridge : MonoBehaviour {
 	public Renderer rend;
 	public GameObject port;
 	public bool active = false;
-
+	
 	public void initialize(string content, Texture label_image) {
 		if(label_image != null) { 
 			Material[] temp_materials = rend.materials;
@@ -36,7 +36,7 @@ public class cartridge : MonoBehaviour {
 		switch(a) {
 			//Port is requesting insertion, respond!
 			case "center_click":
-				if(!active && transform.parent != null) {
+				if(!active && port != null && transform.parent != null) {
 					transform.parent.gameObject.GetComponent<hands>().releaseObjectSelf();
 					port.GetComponent<port>().insert();
 				}

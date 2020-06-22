@@ -34,7 +34,7 @@ public class weather_API : MonoBehaviour {
 		//Defaults (For items that save even during play)
 		setDefaultSky(default_skybox);
 		grassTweenCallback(0.2f);
-		glassTweenCallback(0);
+		glassTweenCallback(0.01f);
 		
 		//setWeather(0);
 		json = "[";
@@ -144,11 +144,11 @@ public class weather_API : MonoBehaviour {
 	}
 
 	private void setRainGlass(int index) {
-		weatherTween(rain_glass.GetFloat("_Size"), weather_modes[index].rain_intensity, "glassTweenCallback");
+		weatherTween(rain_glass.GetFloat("_DropSize"), Utility.convertRangeOne(weather_modes[index].rain_intensity, 0.01f, 0.1f), "glassTweenCallback");
 	}
 
 	private void glassTweenCallback(float val) {
-		rain_glass.SetFloat("_Size", val);
+		rain_glass.SetFloat("_DropSize", val);
 		rain_glass.SetFloat("_Blur", val);
 	}
 

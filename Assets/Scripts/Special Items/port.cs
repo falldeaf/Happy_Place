@@ -14,6 +14,11 @@ public class port : MonoBehaviour {
 	private GameObject current_card;
 	public bool is_active = false;
 
+	public void Start() {
+		setText1("OHHAI LISA! :)\n Love you <3");
+		setText2("Put a cartridge in me to start...");
+	}
+
 	public void registerDevice(GameObject go) { device = go; }
 
 	public void OnTriggerEnter(Collider other) {
@@ -28,9 +33,7 @@ public class port : MonoBehaviour {
 		if(other.gameObject.tag == "tinyc" && other.GetComponent<Reorient>().is_held == true && is_active == false) {
 			//orient card correctly in space when near port
 			var card = other.gameObject.transform.GetChild(0);
-			//card.transform.position = insertion_position.transform.position;
 			card.transform.position = Vector3.Lerp(card.transform.position, insertion_position.transform.position, 0.5f);
-			//card.transform.rotation = insertion_position.transform.rotation;
 			card.transform.rotation = Quaternion.Lerp(card.transform.rotation, insertion_position.transform.rotation, 0.5f);
 		}
 	}
@@ -64,11 +67,14 @@ public class port : MonoBehaviour {
 	}
 
 	public void ejectedCard() {
+		current_card.GetComponent<cartridge>().eject();
 		current_card.GetComponent<BoxCollider>().enabled = true;
 		current_card.transform.parent = null;
 		current_card.GetComponent<Rigidbody>().isKinematic = false;
 		device.SendMessage("ejecting");
 		is_active = false;
+		setText1("");
+		setText2("No cartridge...");
 	}
 
 	public void deviceInput(string a) {
