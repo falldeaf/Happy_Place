@@ -15,7 +15,9 @@ public class hands : MonoBehaviour {
 	public SteamVR_Action_Boolean top_ClickAction;
 	public SteamVR_Action_Boolean bottom_ClickAction;
 	public SteamVR_Action_Boolean trigger_ClickAction;
+	public SteamVR_Action_Vector2 scrolling;
 
+	private bool swipe_cooldown = true;
 	private GameObject collidingObject;
 	private GameObject objectInHand;
 
@@ -130,6 +132,28 @@ public class hands : MonoBehaviour {
 
 		if (trigger_ClickAction.GetLastStateDown(handType) && objectInHand != null) {
 			objectInHand.SendMessage("action", "trigger_click");
+		}
+
+		//print(scrolling.GetAxis(handType));
+
+		//SwipeUp
+		if (scrolling.GetAxis(handType).y > 1.5f && swipe_cooldown && objectInHand != null) {
+			objectInHand.SendMessage("action", "swipe_up");
+			print("Swipe up!");
+			swipe_cooldown = false;
+			StartCoroutine(swipeCooldown(1.2f));
+		}
+
+		if (scrolling.GetAxis(handType).y < -1.5f && swipe_cooldown && objectInHand != null) {
+			objectInHand.SendMessage("action", "swipe_down");
+			print("Swipe down!");
+			swipe_cooldown = false;
+			StartCoroutine(swipeCooldown(1.2f));
+		}
+
+		IEnumerator swipeCooldown(float time) {
+			yield return new WaitForSeconds(time);
+			swipe_cooldown = true;
 		}
 
 		if (grabAction.GetLastStateUp(handType)) {

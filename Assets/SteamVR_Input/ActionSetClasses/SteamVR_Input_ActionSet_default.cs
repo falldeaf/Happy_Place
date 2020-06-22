@@ -73,51 +73,11 @@ namespace Valve.VR
             }
         }
         
-        public virtual SteamVR_Action_Boolean SnapTurnLeft
+        public virtual SteamVR_Action_Vector2 Scrolling
         {
             get
             {
-                return SteamVR_Actions.default_SnapTurnLeft;
-            }
-        }
-        
-        public virtual SteamVR_Action_Boolean SnapTurnRight
-        {
-            get
-            {
-                return SteamVR_Actions.default_SnapTurnRight;
-            }
-        }
-        
-        public virtual SteamVR_Action_Vector2 Scroll_UP
-        {
-            get
-            {
-                return SteamVR_Actions.default_Scroll_UP;
-            }
-        }
-        
-        public virtual SteamVR_Action_Vector2 Scroll_DOWN
-        {
-            get
-            {
-                return SteamVR_Actions.default_Scroll_DOWN;
-            }
-        }
-        
-        public virtual SteamVR_Action_Vector2 Scroll_LEFT
-        {
-            get
-            {
-                return SteamVR_Actions.default_Scroll_LEFT;
-            }
-        }
-        
-        public virtual SteamVR_Action_Vector2 Scroll_RIGHT
-        {
-            get
-            {
-                return SteamVR_Actions.default_Scroll_RIGHT;
+                return SteamVR_Actions.default_Scrolling;
             }
         }
         
