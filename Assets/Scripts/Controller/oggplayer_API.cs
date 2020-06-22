@@ -4,8 +4,8 @@ using UnityEngine;
 using UnityEngine.Networking;
 using System;
 using System.IO;
-using TagLib;
 using Jint;
+using ATL;
 
 public class oggplayer_API : MonoBehaviour
 {
@@ -25,7 +25,6 @@ public class oggplayer_API : MonoBehaviour
  		playlist = new List<OGG>();
 		json = "[";
 
-		ID3Tag.Core.TagParser.ID3v1Parser reader = new ID3Tag.Core.TagParser.ID3v1Parser();
 		foreach (string file in System.IO.Directory.GetFiles(Application.dataPath + "/StreamingAssets/ogg/")) {
 			if(Path.GetExtension(file).Equals(".ogg")) {
 
@@ -33,11 +32,12 @@ public class oggplayer_API : MonoBehaviour
 				var ogg = new OGG();
 				ogg.path = file;
 
-				TagLib.File resp = TagLib.File.Create(file);
+				Track resp = new Track(file);
 				if (resp != null) {
-					ogg.songname = resp.Tag.Title;
-					//ogg.artist = resp.Tag.AlbumArtists[0];
-					ogg.album = resp.Tag.Album;
+					ogg.songname = resp.Title;
+					ogg.artist = resp.Artist;
+					ogg.album = resp.Album;
+					print(resp.Title + " : " + resp.Artist + " : " + resp.Album);
 				}
 				json += JsonUtility.ToJson(ogg) + ",";
 				playlist.Add(ogg);
