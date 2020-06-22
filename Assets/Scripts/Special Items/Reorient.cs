@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Reorient : MonoBehaviour {
 
+	[Header("Should the controller still be visible while this item is held?")]
 	public bool visible_controller = false;
 	public Vector3 local_position;
 	public Vector3 local_rotation;
