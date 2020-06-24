@@ -3,7 +3,7 @@ VR Based Happy Place simulator for HTC Vive
 
 ![In-game screenshot](https://falldeaf.com/falldeaf-content/uploads/2020/06/vlcsnap-2020-06-23-20h25m52s458.png)
 
-This is a Unity 2019.3.10f1 based project that puts you into a spooky forest scene with a few items to play with, like a flashlight, old telephone and the Clam Shell reader from the movie It Follows. The clamshell has a special functionality, however. It allow you to load up cartridges into it to give it special functionality, based on javascript programs dynamically interpreted at runtime using Jint, a C# based javascript engine.
+This is a Unity 2019.3.10f1 based project that puts you into a spooky forest scene with a few items to play with, like a flashlight, old telephone and the Clam Shell reader from the movie It Follows. The clamshell has a special functionality, however. It allows you to load up cartridges into it to give it special functionality, based on javascript programs dynamically interpreted at runtime using Jint, a C# based javascript engine.
 
 Controls:
 Side grips pick up objects.
@@ -25,5 +25,6 @@ function action(a) {
   log("Saw the button/command: " + a)
 }
 ```
-
 And should be stored in the StreamingAssets/scripts folder.
+
+Store OGG files in StreamingAssets/ogg to be picked up by the OGG player API.
